@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3">
+        <p class="e">{{this.a}}</p>  
+      </ion-col>
+      <ion-col size="7">
+        <ion-item lines="none" color="none" class="dd">
+          <ion-input type="text" placeholder="Cancel" class="ha">
+            <ion-icon name="close-outline" class="icon2"></ion-icon> 
+            <ion-icon name="camera-outline" class="icon1"></ion-icon>
+          </ion-input>  
+        </ion-item>  
+      </ion-col>
+      <ion-col size="2">
+        <ion-icon name="options-outline" class="hu"></ion-icon>  
+      </ion-col>  
+    </ion-row>  
+  </ion-grid>
+
+<app-eight></app-eight>
+
+   <!-- <ion-grid>
+    <ion-row>
+      <ion-col size="6" size-md="4" size-lg="2" *ngFor="let item of ar" (click)="go(item)">
+        <div class="card">
+          <img src="{{item.img}}" class="card-img-top7" alt="..." >
+          <div class="card-body">
+            <p class="card-text"> {{item.text5}} <br> amet, consecuter </p> 
+            <h1 style="margin-top: 0px;font-size: 15px;font-weight: bold;">$ {{item.price}} </h1>
+          </div>
+        </div>   
+      </ion-col>
+
+      
+    </ion-row>
+  </ion-grid>  -->
+</ion-content>
+
+<ion-toolbar color="secondry" class="gggg">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="1"></ion-col>
+      <ion-col size="2">
+        <ion-list class="aaab">
+          <ion-icon style="font-size: 30px;color: black;margin-top: 5px;" name="home-outline"></ion-icon>
+        </ion-list>
+      </ion-col>
+      <ion-col size="2">
+        <ion-list class="aaaa">
+          <ion-icon style="font-size: 30px;color: blue;margin-top: 5px;" name="heart-outline"></ion-icon>
+        </ion-list>
+      </ion-col>
+      <ion-col size="2">
+        <ion-list class="aaaa">
+          <ion-icon style="font-size: 30px;color: blue;margin-top: 5px;" name="reader-outline"></ion-icon>
+        </ion-list>
+      </ion-col>
+      <ion-col size="2">
+        <ion-list class="aaaa" style="position: relative;">
+          <ion-icon style="font-size: 30px;color: blue;margin-top: 5px;" name="cart-outline"(click)="tum()"></ion-icon>
+          <ion-badge color="danger" style="position: absolute; top: 5px; right: 0px;height: 20px;width: 20px;border-radius: 20px;">{{ cartItemCount }}</ion-badge>
+        </ion-list>
+      </ion-col>
+      <ion-col size="2">
+        <ion-list class="aaaa">
+          <ion-icon style="font-size: 30px;color: blue;margin-top: 5px;" name="person-outline"></ion-icon>
+        </ion-list>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>

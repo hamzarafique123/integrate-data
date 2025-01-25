@@ -1,0 +1,18 @@
+<ion-grid>
+  <ion-row >
+    @for(item of ar; track item){
+    <ion-col size="6" size-md="4" size-lg="2"  (click)="go(item)">
+      <div class="card">
+        <img src="{{item.img}}" class="card-img-top7" alt="..." >
+        <div class="card-body">
+          <p class="card-text"> {{item.text5}} <br> amet, consecuter </p> 
+          <h1 style="margin-top: 0px;font-size: 15px;font-weight: bold;">$ {{item.price}} </h1>
+        </div>
+      </div>   
+    </ion-col>
+  }
+    <!-- <ion-col size="12">
+      <ion-button expand="block" class="cc" (click)="next()">Next</ion-button>  
+    </ion-col>  -->
+  </ion-row>
+</ion-grid> 

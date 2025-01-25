@@ -1,0 +1,122 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ a }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="12" size-lg="6">
+        <ion-row>
+          <ion-col size="12">
+            <p class="a">{{ hum.text5 }}</p>
+          </ion-col>
+          <ion-col size="12" *ngFor="let ra of bun">
+            <img [src]="hum.img" alt="" class="b">
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="ro">
+          <ion-col size="12">
+            <ion-row>
+              <ion-col size="5" class="col">
+                <p class="d">${{ hum.price }} <ion-icon [name]="hum.icon" class="icon-style"></ion-icon></p>
+              </ion-col>
+              <ion-col size="1" class="col">
+                <img src="../../assets/store/clock.png" alt="" class="e">
+              </ion-col>
+              <ion-col size="1.5" class="col">
+                <p class="f">00</p>
+              </ion-col>
+              <ion-col size="1.5" class="col">
+                <p class="f">36</p>
+              </ion-col>
+              <ion-col size="1.5" class="col">
+                <p class="f">58</p>
+              </ion-col>
+              <ion-col size="1.5">
+                <ion-icon name="arrow-redo" class="icon5"></ion-icon>
+              </ion-col>
+              <ion-col size="6">
+                <p class="pa">$ {{ hum.price2 }}</p>
+                <ion-badge class="bagd" color="secondary"><p class="text">-20%</p></ion-badge>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col size="12" size-md="12" size-lg="6">
+        <ion-row class="ro">
+          <ion-col size="12">
+            <p class="i">Color Options</p>
+            <ion-icon style="font-size: 30px;color: blue;margin-top: 5px;float: right;" name="cart-outline"(click)="tum()"></ion-icon>
+            <ion-badge color="danger" style="position: absolute; top: 5px; right: 0px;height: 20px;width: 20px;border-radius: 20px;">{{ cartItemCount }}</ion-badge>
+          </ion-col>
+        </ion-row>
+      <ion-col size="12">
+        <swiper-container [breakpoints]="{
+          '280': { 'slidesPerView': 3, 'spaceBetween': 10 },
+          '380': { 'slidesPerView': 3, 'spaceBetween': 10 },
+          '412': { 'slidesPerView': 4, 'spaceBetween': 10 },
+          '680': { 'slidesPerView': 4, 'spaceBetween': 10 },
+          '764': { 'slidesPerView': 7, 'spaceBetween': 10 }
+        }">
+          <swiper-slide *ngFor="let item of artr">
+            <ion-card class="color-card" [ngClass]="{'selected': selectedColor === item.color}" (click)="selectColor(item.color)">
+              <div class="color-circle" [ngStyle]="{'background-color': item.color}"></div>
+              <ion-checkbox *ngIf="selectedColor === item.color" [checked]="true" class="color-checkbox"></ion-checkbox>
+            </ion-card>
+          </swiper-slide>
+        </swiper-container>
+        
+      </ion-col>
+        <ion-row class="ro">
+          <ion-col size="12">
+            <p class="i">Size</p>
+          </ion-col>
+          <ion-col size="2" *ngFor="let size of availableSizes">
+            <ion-button
+              color="light"
+              class="bu"
+              [ngClass]="{'selected-size': selectedSize === size}"
+              (click)="selectSize(size)">
+              {{ size }}
+              <ion-checkbox *ngIf="selectedSize === size" [checked]="true" class="size-checkbox"></ion-checkbox>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        
+
+        <ion-row class="ro">
+          <ion-col size="5">
+            <p class="ii">Quantity</p>
+          </ion-col>
+          <ion-col size="7">
+            <div class="hy">
+              <ion-button shape="round" fill="outline" class="aaa" (click)="decrementQuantity()">
+                <ion-icon slot="icon-only" name="remove-outline" class="icon4"></ion-icon>
+              </ion-button>
+              <p class="hij">{{ quantity }}</p>
+              <ion-button shape="round" fill="outline" class="aaaa" (click)="incrementQuantity()">
+                <ion-icon slot="icon-only" name="add" class="icon4"></ion-icon>
+              </ion-button>
+            </div>
+          </ion-col>
+          <ion-col size="2"><ion-icon name="heart-outline" class="icon"></ion-icon></ion-col>
+          <ion-col size="5"><ion-button color="dark" class="butt" (click)="addToCart()">Add to Cart</ion-button></ion-col>
+          <ion-col size="5"><ion-button color="primary" class="butt">Buy Now</ion-button></ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content> -->
+
+
+<app-ten></app-ten>

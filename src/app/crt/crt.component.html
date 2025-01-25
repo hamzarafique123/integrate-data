@@ -1,0 +1,125 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row class="ro">
+      <ion-col size="12" size-md="12" size-lg="6">
+        <ion-row>
+          <ion-col size="12">
+            <p class="g">{{ this.a }}</p>
+            <ion-badge class="h">
+              <p class="i">{{ humi.length }}</p>
+            </ion-badge>
+          </ion-col>
+          <ion-col size="12">
+            <ion-list class="b">
+              <h1 class="c">{{ this.c }}</h1>
+              <p class="d">{{ address }}</p>
+              <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+                <ion-fab-button class="aaa" color="secondary">
+                  <ion-icon name="pencil-outline" id="open-modal" class="f"></ion-icon>
+                </ion-fab-button>
+              </ion-fab>
+            </ion-list>
+          </ion-col>
+
+          
+          <ion-row>
+            <ion-modal #modal trigger="open-modal" [enterAnimation]="enterAnimation" [leaveAnimation]="leaveAnimation">
+              <ng-template>
+                <ion-header>
+                  <ion-toolbar>
+                    <ion-title><p class="modal1">Shipping Address</p></ion-title>
+                    <ion-button slot="end">
+                      <ion-button (click)="modal.dismiss()">
+                        <ion-icon slot="icon-only" name="close-outline" class="modal3"></ion-icon>
+                      </ion-button>
+                    </ion-button>
+                  </ion-toolbar>
+                </ion-header>
+                <ion-content [fullscreen]="true">
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col size="12">
+                        <ion-item lines="none" color="none" class="dd">
+                          <ion-input [(ngModel)]="newAddress" placeholder="Enter Your Address"></ion-input>
+                        </ion-item>
+                        <ion-button class="ham" expand="full" (click)="updateAddress(modal)">Confirm Address</ion-button>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </ion-content>
+              </ng-template>
+            </ion-modal>
+            @for(product of humi; track product){
+            <ion-col size="12" >
+              <ion-row>
+                <ion-col size="4">
+                  <img [src]="product.img" alt="" class="img">
+                  <ion-button shape="round" class="ha" color="light" (click)="decrementQuantityById(product.id)">
+                    <ion-icon slot="icon-only" name="trash-outline" class="icon"></ion-icon>
+                  </ion-button>
+                </ion-col>
+                <ion-col size="8">
+                  <ion-row>
+                    <ion-col size="12">
+                      <p class="k">{{ product.text5 }} <br> consecutive</p>
+                      <ion-button color="light" class="bu">{{ product.color }}</ion-button>
+                      <ion-button color="light" class="buu">{{ product.size }}</ion-button>
+                    </ion-col>
+                    <ion-col size="5">
+                      <ion-list class="list2">
+                        <p style="margin-top: 0px; margin-left: 10px; font-weight: bold;">
+                          {{ product.text99 }}
+                          <span style="font-weight: bold; font-style: italic; color: red;">
+                            ${{ product.quantity * product.price2 }}
+                          </span>
+                        </p>
+                      </ion-list>
+                    </ion-col>
+                    <ion-col size="7">
+                      <ion-list class="list">
+                        <ion-button shape="round" fill="outline" class="aaaa" size="small" (click)="decrementQuantityById(product.id)">
+                          <ion-icon slot="icon-only" name="remove-outline" class="icon4"></ion-icon>
+                        </ion-button>
+                        <div class="div">
+                          <p class="pa">{{ product.quantity }}</p>
+                        </div>
+                        <ion-button shape="round" fill="outline" class="aaaaa" size="small" (click)="incrementQuantityById(product.id)">
+                          <ion-icon slot="icon-only" name="add-outline" class="icon4"></ion-icon>
+                        </ion-button>
+                      </ion-list>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          }
+          </ion-row>
+        </ion-row>
+      </ion-col>
+
+      
+      <ion-col size="12" size-md="12" size-lg="6">
+        <ion-row>
+          <ion-col size="8">
+            <p class="po">Subtotal <span class="pi">${{ subtotal }}</span></p>
+            <p class="hidden-price">${{ subtotal }}</p>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button class="bui" (click)="next(subtotal)">Checkout</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
